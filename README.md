@@ -144,7 +144,16 @@ See example asks and interaction log above for the types of asks you may enter.
 
 # Implementation Notes and Tips
 
+-------------------------
+Calling Llama...
 
+Llama returned: {'function_name': 'list_emails', 'parameters': {'query': 'subject:papers to read has:attachment'}}.
+
+Calling tool to access Gmail API: list_emails, {'query': 'subject:papers to read has:attachment'}...
+
+Tool calling returned: [{'message_id': '1936ef72ad3f30e8', 'sender': 'gmagent_tester1@gmail.com', 'subject': 'Fwd: papers to read', 'received_time': '2024-11-27 10:51:51 PST'}, {'message_id': '1936b819706a4923', 'sender': 'Jeff Tang <gmagent_tester2@gmail.com>', 'subject': 'papers to read', 'received_time': '2024-11-26 18:44:19 PST'}]
+
+-------------------------
 
 # Available Custom Functions (Tools)
 
@@ -162,9 +171,14 @@ See example asks and interaction log above for the types of asks you may enter.
 2. Improve the search, reply, forward, create email draft, and query about attachments.  
 3. Improve the fallback and error handling mechanism when the user asks don't lead to a correct function calling spec or the function calling fails. 
 4. Improve the user experience by showing progress when some Gmail search API calls take long (minutes) to complete.
-5. 
-
-
+5. Implement the agent planning - decomposing a complicated ask into sub-tasks, using ReAct and other patterns.
+6. Improvement the agent memory - longer context and memory across sessions.
+7. Implement reflection - on the tool calling spec and results.
+8. Introduce multiple-agent collaboration.
+9. Support any and all types of asks a user may have to Gmagent.
+10. Implement the agent observability. 
+11. Compare different agent frameworks using Gmagent as the case study.
+12. Productionize Gmagent.
 
 
 # Resources
