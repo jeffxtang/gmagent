@@ -563,7 +563,6 @@ class Agent:
                 elif num <= 5:
                     output = f"I found {num} email{'s' if num > 1 else ''} matching your query:\n"
                     for i, email in enumerate(result, start=1):
-                        #output += f"{i}. {email['message_id']} - From: {email['sender']}, Subject: {email['subject']}, Received on: {email['received_time']}\n"
                         output += f"{i}. From: {email['sender']}, Subject: {email['subject']}, Received on: {email['received_time']}\n"
                 else:
                     output = f"I found {num} emails matching your query. Here are the first 5 emails:\n"

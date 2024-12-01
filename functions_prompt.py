@@ -193,14 +193,13 @@ send_draft_function = """
 """
 
 examples = """
-{"name": "list_emails", "parameters": {"query": "is:unread"}}
-{"name": "list_emails", "parameters": {"maxResults": 500}}
-{"name": "list_emails", "parameters":  {"query": "<query> is:unread"}}
-{"name": "list_emails", "parameters":  {"query": "<query> is:read"}}
+{"name": "list_emails", "parameters": {"query": "has:attachment larger:5mb"}}
 {"name": "list_emails", "parameters": {"query": "has:attachment"}}
 {"name": "list_emails", "parameters": {"query": "newer_than:1d"}}
 {"name": "list_emails", "parameters": {"query": "older_than:1d"}}
-{"name": "list_emails", "parameters": {"query": "has:attachment larger:5mb"}}
+{"name": "list_emails", "parameters": {"query": "is:unread"}}
+{"name": "list_emails", "parameters":  {"query": "<query> is:unread"}}
+{"name": "list_emails", "parameters":  {"query": "<query> is:read"}}
 {"name": "get_email_detail", "parameters": {"detail": "body", "which": "first"}}
 {"name": "get_email_detail", "parameters": {"detail": "body", "which": "last"}}
 {"name": "get_email_detail", "parameters": {"detail": "body", "which": "second"}}
@@ -222,7 +221,7 @@ examples = """
 system_prompt = f"""
 Environment: ipython
 Cutting Knowledge Date: December 2023
-Today Date: 27 November 2024
+Today Date: 1 December 2024
 
 Your name is Gmagent, an assistant that can perform all Gmail related tasks for your user.
 Respond to the user's ask by making use of the following functions if needed.
